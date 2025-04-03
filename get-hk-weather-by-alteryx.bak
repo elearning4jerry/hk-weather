@@ -1,0 +1,739 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="2024.2" RunE2="T">
+  <Nodes>
+    <Node ToolID="3">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
+        <Position x="126" y="90" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <NumRows value="1" />
+          <Fields>
+            <Field name="api_url" />
+          </Fields>
+          <Data>
+            <r>
+              <c>https://data.weather.gov.hk/weatherAPI/opendata/opendata.php</c>
+            </r>
+          </Data>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextInput" />
+    </Node>
+    <Node ToolID="4">
+      <GuiSettings Plugin="AlteryxConnectorGui.Download.Download">
+        <Position x="534" y="90" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <URLField>api_url</URLField>
+          <OutputMode>String</OutputMode>
+          <CodePage>65001</CodePage>
+          <EncodeURLs value="True" />
+          <Headers>
+            <NameValues />
+            <Fields orderChanged="False">
+              <Field name="api_url" selected="False" />
+              <Field name="station" selected="False" />
+              <Field name="data_type" selected="False" />
+              <Field name="payload" selected="False" />
+              <Field name="*Unknown" selected="False" />
+            </Fields>
+          </Headers>
+          <Payload>
+            <HTTPAction>GET</HTTPAction>
+            <QueryStringBodyMode>Field</QueryStringBodyMode>
+            <Field>payload</Field>
+          </Payload>
+          <numConnections>2</numConnections>
+          <Timeout>600</Timeout>
+          <EnableRPM value="False" />
+          <DcmAdvancedAuth value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxConnectorEngine.dll" EngineDllEntryPoint="AlteryxDownload" />
+    </Node>
+    <Node ToolID="5">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
+        <Position x="126" y="150" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <NumRows value="39" />
+          <Fields>
+            <Field name="station" />
+            <Field name="station_name" />
+          </Fields>
+          <Data>
+            <r>
+              <c>CCH</c>
+              <c>Cheung Chau</c>
+            </r>
+            <r>
+              <c>CWB</c>
+              <c>Clear Water Bay</c>
+            </r>
+            <r>
+              <c>HKA</c>
+              <c>Hong Kong International Airport</c>
+            </r>
+            <r>
+              <c>HKO</c>
+              <c>Hong Kong Observatory</c>
+            </r>
+            <r>
+              <c>HKP</c>
+              <c>Hong Kong Park</c>
+            </r>
+            <r>
+              <c>HKS</c>
+              <c>Wong Chuk Hang</c>
+            </r>
+            <r>
+              <c>HPV</c>
+              <c>Happy Valley</c>
+            </r>
+            <r>
+              <c>JKB</c>
+              <c>Tseung Kwan O</c>
+            </r>
+            <r>
+              <c>KLT</c>
+              <c>Kowloon City</c>
+            </r>
+            <r>
+              <c>KP</c>
+              <c>King's Park</c>
+            </r>
+            <r>
+              <c>KSC</c>
+              <c>Kau Sai Chau</c>
+            </r>
+            <r>
+              <c>KTG</c>
+              <c>Kwun Tong</c>
+            </r>
+            <r>
+              <c>LFS</c>
+              <c>Lau Fau Shan</c>
+            </r>
+            <r>
+              <c>NGP</c>
+              <c>Ngong Ping</c>
+            </r>
+            <r>
+              <c>PEN</c>
+              <c>Peng Chau</c>
+            </r>
+            <r>
+              <c>PLC</c>
+              <c>Tai Mei Tuk</c>
+            </r>
+            <r>
+              <c>SE1</c>
+              <c>Kai Tak Runway Park</c>
+            </r>
+            <r>
+              <c>SEK</c>
+              <c>Shek Kong</c>
+            </r>
+            <r>
+              <c>SHA</c>
+              <c>Sha Tin</c>
+            </r>
+            <r>
+              <c>SKG</c>
+              <c>Sai Kung</c>
+            </r>
+            <r>
+              <c>SKW</c>
+              <c>Shau Kei Wan</c>
+            </r>
+            <r>
+              <c>SSH</c>
+              <c>Sheung Shui</c>
+            </r>
+            <r>
+              <c>SSP</c>
+              <c>Sham Shui Po</c>
+            </r>
+            <r>
+              <c>STY</c>
+              <c>Stanley</c>
+            </r>
+            <r>
+              <c>TC</c>
+              <c>Tate's Cairn</c>
+            </r>
+            <r>
+              <c>TKL</c>
+              <c>Ta Kwu Ling</c>
+            </r>
+            <r>
+              <c>TMS</c>
+              <c>Tai Mo Shan</c>
+            </r>
+            <r>
+              <c>TPO</c>
+              <c>Tai Po (Conservation Studies Centre)</c>
+            </r>
+            <r>
+              <c>TU1</c>
+              <c>Tuen Mun Children and Juvenile Home</c>
+            </r>
+            <r>
+              <c>TW</c>
+              <c>Tsuen Wan Shing Mun Valley</c>
+            </r>
+            <r>
+              <c>TWN</c>
+              <c>Tsuen Wan</c>
+            </r>
+            <r>
+              <c>TY1</c>
+              <c>New Tsing Yi Station</c>
+            </r>
+            <r>
+              <c>TYW</c>
+              <c>Pak Tam Chung (Tsak Yue Wu)</c>
+            </r>
+            <r>
+              <c>VP1</c>
+              <c>The Peak</c>
+            </r>
+            <r>
+              <c>WGL</c>
+              <c>Waglan Island</c>
+            </r>
+            <r>
+              <c>WLP</c>
+              <c>Wetland Park</c>
+            </r>
+            <r>
+              <c>WTS</c>
+              <c>Wong Tai Sin</c>
+            </r>
+            <r>
+              <c>YCT</c>
+              <c>Tai Po (Yuan Chau Tsai Park)</c>
+            </r>
+            <r>
+              <c>YLP</c>
+              <c>Yuen Long Park</c>
+            </r>
+          </Data>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextInput" />
+    </Node>
+    <Node ToolID="6">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AppendFields.AppendFields">
+        <Position x="234" y="186" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <CartesianMode>Allow</CartesianMode>
+          <SelectConfiguration>
+            <Configuration outputConnection="Output">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Target_station" selected="True" input="Target_" />
+                <SelectField field="Source_data_type" selected="True" input="Source_" />
+                <SelectField field="*Unknown" selected="False" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxAppendFields" />
+    </Node>
+    <Node ToolID="7">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="438" y="90" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="&quot;dataType=&quot;+[data_type]+&quot;&amp;station=&quot;+[station]+&quot;&amp;rformat=json&quot;" field="payload" size="2147483647" type="V_String" enabled="true" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText><![CDATA[payload = "dataType="+[data_type]+"&station="+[station]+"&rformat=json"
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="8">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.JSONParse.JSONParse">
+        <Position x="630" y="90" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <JSON_Field>DownloadData</JSON_Field>
+          <IncludeInOutput value="False" />
+          <SingleField value="False" />
+          <Mode>MultiField</Mode>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJSONParse" />
+    </Node>
+    <Node ToolID="9">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="126" y="306" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Mode>Simple</Mode>
+          <Simple>
+            <Operator>Contains</Operator>
+            <Field>JSON_Name</Field>
+            <Operands>
+              <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+              <DateType>fixed</DateType>
+              <PeriodDate>2025-04-03 22:57:50</PeriodDate>
+              <PeriodType>
+              </PeriodType>
+              <PeriodCount>0</PeriodCount>
+              <Operand>data.</Operand>
+              <StartDate>2025-04-03 22:57:50</StartDate>
+              <EndDate>2025-04-03 22:57:50</EndDate>
+            </Operands>
+          </Simple>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Contains([JSON_Name],"data.")</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="10">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.RegEx.RegEx">
+        <Position x="234" y="306" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Field>JSON_Name</Field>
+          <RegExExpression value="data\.(\d+)\.(\d+)" />
+          <CaseInsensitve value="True" />
+          <Method>ParseComplex</Method>
+          <Replace expression="">
+            <CopyUnmatched value="True" />
+          </Replace>
+          <ParseSimple>
+            <SplitToRows value="False" />
+            <RootName>JSON_Name</RootName>
+            <NumFields value="2" />
+            <ErrorHandling>Warn</ErrorHandling>
+          </ParseSimple>
+          <ParseComplex>
+            <Field field="record_id" type="V_WString" size="1073741823" />
+            <Field field="new_header" type="V_WString" size="1073741823" />
+          </ParseComplex>
+          <Match>
+            <Field>api_url_Matched</Field>
+            <ErrorUnmatched value="False" />
+          </Match>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxRegEx" />
+    </Node>
+    <Node ToolID="11">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="726" y="90" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="station" selected="True" />
+            <SelectField field="data_type" selected="True" />
+            <SelectField field="JSON_Name" selected="True" />
+            <SelectField field="JSON_ValueString" selected="True" />
+            <SelectField field="*Unknown" selected="False" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="12">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.CrossTab.CrossTab">
+        <Position x="318" y="306" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <GroupFields>
+            <Field field="station" />
+            <Field field="data_type" />
+            <Field field="record_id" />
+          </GroupFields>
+          <HeaderField field="new_header" />
+          <DataField field="JSON_ValueString" />
+          <Methods>
+            <Method method="First" />
+            <Separator>,</Separator>
+            <FieldSize value="2048" />
+          </Methods>
+          <RetainSpecChars value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="station" size="2147483647" source="CrossTab:Group:First:" type="V_String" />
+            <Field name="data_type" size="2147483647" source="CrossTab:Group:First:" type="V_String" />
+            <Field description="RegEx: Parsed from JSON_Name" name="record_id" size="1073741823" source="CrossTab:Group:First:" type="V_WString" />
+            <Field name="0" size="1073741823" source="JSON_Parse" type="V_WString" />
+            <Field name="1" size="1073741823" source="JSON_Parse" type="V_WString" />
+            <Field name="2" size="1073741823" source="JSON_Parse" type="V_WString" />
+            <Field name="3" size="1073741823" source="JSON_Parse" type="V_WString" />
+            <Field name="4" size="1073741823" source="JSON_Parse" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxCrossTab" />
+    </Node>
+    <Node ToolID="17">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
+        <Position x="126" y="210" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <NumRows value="3" />
+          <Fields>
+            <Field name="data_type" />
+          </Fields>
+          <Data>
+            <r>
+              <c>CLMTEMP</c>
+            </r>
+            <r>
+              <c>CLMMAXT</c>
+            </r>
+            <r>
+              <c>CLMMINT</c>
+            </r>
+          </Data>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextInput" />
+    </Node>
+    <Node ToolID="19">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AppendFields.AppendFields">
+        <Position x="342" y="90" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <CartesianMode>Allow</CartesianMode>
+          <SelectConfiguration>
+            <Configuration outputConnection="Output">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Target_api_url" selected="True" input="Target_" />
+                <SelectField field="Source_station" selected="True" input="Source_" />
+                <SelectField field="Source_data_type" selected="True" input="Source_" />
+                <SelectField field="*Unknown" selected="False" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxAppendFields" />
+    </Node>
+    <Node ToolID="14">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="522" y="306" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="DateTimeParse([0]+&quot;-&quot;+[1]+&quot;-&quot;+[2],&quot;%Y-%m-%d&quot;)" field="date" size="1073741823" type="V_WString" enabled="true" />
+            <FormulaField expression="if [data_type] = &quot;CLMMAXT&quot; then &quot;daily max temperature&quot;&#xA;elseif [data_type] = &quot;CLMMINT&quot; then &quot;daily min temperature&quot;&#xA;else &quot;daily mean temperature&quot; endif&#xA;" field="data_type" size="2147483647" type="V_String" enabled="true" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>date = DateTimeParse([0]+"-"+[1]+"-"+[2],"%Y-%m-%d")
+data_type = if [data_type] ...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="15">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="714" y="306" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="True" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="station" selected="True" />
+            <SelectField field="date" selected="True" type="Date" size="10" />
+            <SelectField field="record_id" selected="False" />
+            <SelectField field="daily_max_temperature" selected="True" />
+            <SelectField field="daily_mean_temperature" selected="True" />
+            <SelectField field="daily_min_temperature" selected="True" />
+            <SelectField field="*Unknown" selected="False" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="16">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Sort.Sort">
+        <Position x="822" y="306" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SortInfo locale="1033">
+            <Field field="station" order="Ascending" />
+            <Field field="date" order="Ascending" />
+          </SortInfo>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>station - Ascending
+date - Ascending</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSort" />
+    </Node>
+    <Node ToolID="21">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="402" y="306" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Expression>ToNumber([0]) &gt;= DateTimeYear(DateTimeNow())-2
+/*and [station]="SE1"
+and [0]="2024"
+and [1]="9"
+and [data_type]="CLMMAXT"*/</Expression>
+          <Mode>Custom</Mode>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>ToNumber([0]) &gt;= DateTimeYear(DateTimeNow())-2
+/*and [station]="SE1"
+and [0]="20...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="22">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.CrossTab.CrossTab">
+        <Position x="618" y="306" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <GroupFields>
+            <Field field="station" />
+            <Field field="record_id" />
+            <Field field="date" />
+          </GroupFields>
+          <HeaderField field="data_type" />
+          <DataField field="3" />
+          <Methods>
+            <Method method="First" />
+            <Separator>,</Separator>
+            <FieldSize value="2048" />
+          </Methods>
+          <RetainSpecChars value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="station" size="2147483647" source="CrossTab:Group:First:" type="V_String" />
+            <Field description="RegEx: Parsed from JSON_Name" name="record_id" size="1073741823" source="CrossTab:Group:First:" type="V_WString" />
+            <Field name="date" size="1073741823" source="CrossTab:Group:First:" type="V_WString" />
+            <Field name="daily_max_temperature" size="1073741823" source="JSON_Parse" type="V_WString" />
+            <Field name="daily_mean_temperature" size="1073741823" source="JSON_Parse" type="V_WString" />
+            <Field name="daily_min_temperature" size="1073741823" source="JSON_Parse" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxCrossTab" />
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="3" Connection="Output" />
+      <Destination ToolID="19" Connection="Targets" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="6" Connection="Output" />
+      <Destination ToolID="19" Connection="Source" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="4" Connection="Output" />
+      <Destination ToolID="8" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="5" Connection="Output" />
+      <Destination ToolID="6" Connection="Targets" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="17" Connection="Output" />
+      <Destination ToolID="6" Connection="Source" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="7" Connection="Output" />
+      <Destination ToolID="4" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="8" Connection="Output" />
+      <Destination ToolID="11" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="9" Connection="True" />
+      <Destination ToolID="10" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="10" Connection="Output" />
+      <Destination ToolID="12" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="11" Connection="Output" />
+      <Destination ToolID="9" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="12" Connection="Output" />
+      <Destination ToolID="21" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="19" Connection="Output" />
+      <Destination ToolID="7" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="14" Connection="Output" />
+      <Destination ToolID="22" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="15" Connection="Output" />
+      <Destination ToolID="16" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="21" Connection="True" />
+      <Destination ToolID="14" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="22" Connection="Output" />
+      <Destination ToolID="15" Connection="Input" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <RunWithE2 value="True" />
+    <PredictiveToolsCodePage value="1252" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="True" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <IsTemplate value="False" />
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>get-hk-weather-by-alteryx</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+      <WorkflowId value="0e556ea0-f8f1-4d99-a0ec-b5098f969653" />
+      <Telemetry>
+        <PreviousWorkflowId value="f378e178-0716-4c91-83b2-9166c4bd4ec9" />
+        <OriginWorkflowId value="f378e178-0716-4c91-83b2-9166c4bd4ec9" />
+      </Telemetry>
+      <PlatformWorkflowId value="" />
+    </MetaInfo>
+    <Events>
+      <Enabled value="True" />
+    </Events>
+  </Properties>
+</AlteryxDocument>
